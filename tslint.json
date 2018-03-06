@@ -1,0 +1,15 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint-config-standard"
+        // "tslint:recommended"
+    ],
+    "globals": {
+        "require": true
+    },
+    "jsRules": {},
+    "rules": {
+        "no-consecutive-blank-lines": false
+    },
+    "rulesDirectory": []
+}
