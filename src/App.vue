@@ -4,13 +4,13 @@
     <TodoList/>
     <button @click="showMyFisrtComp">showMyFisrtComp</button>
     <button @click="showHelloWorld">showHelloWorld</button>
-
+    <router-link to='/my-todo-list'>my-todo-list</router-link>
     <router-view/>
   </div>
 </template>
 
 <script lang='ts'>
-import TodoList from './components/TodoList.vue';
+import TodoList from './components/TodoListDemo/TodoList.vue';
 import Vue from 'vue';
 
 export default Vue.extend({

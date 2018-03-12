@@ -1,0 +1,29 @@
+li {
+    position: relative;
+}
+
+li .delete {
+    display: none;
+    position: absolute;
+    right: 0;
+}
+
+li:hover .delete {
+    display: inline-block;
+}
+
+li.editing .delete {
+    display: none;
+}
+
+.editing {
+    z-index: 999;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}

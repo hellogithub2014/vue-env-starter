@@ -1,0 +1,11 @@
+<li :class="{editing:todo === editingTodo}">
+    <!-- 使用v-model会使得vue-devtools无法追踪 -->
+    <!-- <input type="checkbox" v-model="todo.complete"> -->
+
+    <!-- checkbox应绑定checked属性，测试发现绑定value属性会有bug -->
+    <input :class="getVisibleClass(todo)" type="checkbox" :checked="todo.complete" @change="toggleComplete({uid:todo.id})">
+    <label :class="getVisibleClass(todo)" @dblclick="editTodo(todo)">{{todo.title}}</label>
+    <button :class="getVisibleClass(todo)" @click="deleteTodo(todo.id)" class="delete">✘</button>
+
+    <input type="text" :class="getOppsiteVisibleClass(todo)" :value="todo.title" @keyup.enter="changeTitle(todo.id,$event.target.value)" @keyup.esc="restoreTitle" @blur="restoreTitle">
+</li>

@@ -1,26 +1,15 @@
 // import Vue from 'vue'
-import { mapGetters, mapState, mapActions, mapMutations } from 'vuex';
 import { Component, Prop, Vue } from "vue-property-decorator";
-import MUTATION_TYPE from '../../store/mutation-types';
 
 
 // @Component 修饰符注明了此类为一个 Vue 组件
 @Component( {
     // 所有的组件选项都可以放在这里
     template: require( './MyFirstTsComp.html' ),
-    computed: {
-        ...mapState( [ 'todos' ] ),
-        ...mapGetters( [ 'doneTodos', 'doneTodoCount' ] )
-    },
-    methods: {
-        ...mapMutations( {
-            addTodo: MUTATION_TYPE.ADD_TODO
-        } ),
-        ...mapActions( [ 'addTodoAsync' ] )
-    }
 } )
 export default class MyFirstTsComponent extends Vue {
     @Prop() text: string;
+    @Prop() myModel: { data: Object };
     // 初始数据可以直接声明为实例的属性
     message: string = "Hello!";
 
@@ -31,5 +20,10 @@ export default class MyFirstTsComponent extends Vue {
 
     created () {
         console.log( `created` );
+    }
+
+    addChildren () {
+        Vue.set( this.myModel.data, "children", [ 1, 2, 3 ] );
+        // this.myModel.children.push( ...[ 1, 2, 3 ] );
     }
 }

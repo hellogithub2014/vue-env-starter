@@ -1,0 +1,11 @@
+<footer>
+    筛选：
+    <button @click="changeStatus(null)">全部</button>
+    <button @click="changeStatus(true)">完成</button>
+    <button @click="changeStatus(false)">未完成</button>
+    <div>
+        搜索： <input type="text" v-model="filterKey" @keyup.enter="changeFilterKey">
+    </div>
+    <button @click="toggleAll">全部置为完成/未完成</button>
+    <button @click="removeAllCompleted" v-show="isRemoveAllCompleteButtonShow">清楚所有已完成Todo</button>
+</footer>

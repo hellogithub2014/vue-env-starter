@@ -1,0 +1,5 @@
+<div>
+    <TodoListHeader></TodoListHeader>
+    <TodoListContent :filteredTodos="filteredTodos"></TodoListContent>
+    <TodoListFooter @status-change="updateStatus($event)" @filterkey-change="updateFilterKey($event)"></TodoListFooter>
+</div>

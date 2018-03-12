@@ -1,23 +1,10 @@
 <div>
     <button @click="onClick">{{text}}</button>
-    <div>
-        <p><strong>my first vuex</strong></p>
-        <span>todos</span>
-        <ul>
-            <li v-for='todo in todos' :key="todo.id">{{todo.id}} -- msg:{{todo.msg}}, done:{{todo.done}}</li>
-        </ul>
 
-        <span>doneTodos</span>
-        <ul>
-            <li v-for='todo in doneTodos' :key="todo.id">{{todo.msg}}</li>
-        </ul>
-
-        <p>
-            doneTodoCount: {{doneTodoCount}}
-        </p>
-
-        <button @click='addTodo({msg:"mutationAddTodo"})'>mutationAddTodo</button>
-        <button @click='addTodoAsync({msg:"actionAddTodo"})'>actionAddTodo</button>
-    </div>
+    <strong>测试动态添加props属性</strong>
+    <button @click="addChildren">添加children属性</button>
+    <ul v-if="myModel.data.children">
+        <li v-for="child in myModel.data.children">{{child}}</li>
+    </ul>
 
 </div>
