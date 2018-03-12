@@ -1,16 +1,11 @@
 <div>
     <template v-if="filteredTodos && filteredTodos.length">
-        <ul >
-            <li
-                is="TodoListContentItem"
-                v-for="todo in filteredTodos"
-                :key="todo.id"
-                :todo="todo"
-                >
-            </li>
-        </ul>
-        <p> {{activeTodoCount}} {{activeTodoCount | pluralize}} left</p>
-    </template>
+    <ul>
+      <li is="TodoListContentItem" v-for="todo in filteredTodos" :key="todo.id" :todo="todo">
+      </li>
+    </ul>
+    <p> {{activeTodoCount}} {{activeTodoCount | pluralize}} left</p>
+  </template>
 
-    <p v-else>there are no todos yet, go creating one!</p>
+    <p v-else>there are no todos yet, go creating one！</p>
 </div>
