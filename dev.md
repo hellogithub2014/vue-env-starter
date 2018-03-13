@@ -6,3 +6,5 @@ stash
 this is dev,more edit more edit,edit by master~
 this is dev,more edit,another guy edt
 
+this is dev,more edit more edit,edit by master~ edit by dev
+edit by another guy at dev, edit again
